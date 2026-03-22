@@ -3,16 +3,15 @@ class Vehiculo {
     - placa
     - marca
     - modelo
-    - anioFabricacion
-    - precioPorDia
+    - precioDia
 }
 class Auto {
 }
 class Moto {
-    - cilindradaCc
+    - cilindrada
 }
 class Camioneta {
-    - capacidadCargaKg
+    - capacidadCarga
 }
 class Cliente {
     - id
