@@ -1,0 +1,46 @@
+@startuml rentafacil
+class Vehiculo {
+    - placa
+    - marca
+    - modelo
+    - anioFabricacion
+    - precioPorDia
+}
+class Auto {
+}
+class Moto {
+    - cilindradaCc
+}
+class Camioneta {
+    - capacidadCargaKg
+}
+class Cliente {
+    - id
+    - nombre
+    - dni
+    - numeroTelefono
+}
+class Alquiler {
+    - codigoAlquiler
+    - fechaInicio
+    - fechaFin
+    - costoTotal
+    - estado
+    + calcularCostoTotal()
+    + finalizarAlquiler()
+}
+class GestionRentaFacil {
+    + agregarCliente()
+    + agregarVehiculo()
+    + registrarAlquiler()
+    + finalizarAlquiler()
+}
+Auto --> Vehiculo
+Moto --> Vehiculo
+Camioneta --> Vehiculo
+Cliente "1" o--> "0..3" Alquiler
+Alquiler "1" o--> "1..*" Vehiculo
+GestionRegistro "1" o--> "*" Cliente
+GestionRegistro "1" o--> "*" Vehiculo
+GestionRegistro "1" o--> "*" Alquiler
+@enduml
